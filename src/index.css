@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cozy-cream text-cozy-darkBrown;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .cozy-card {
+    @apply bg-white rounded-2xl shadow-sm border border-cozy-sand/30 p-6 transition-all hover:shadow-md;
+  }
+
+  .cozy-button {
+    @apply px-4 py-2 rounded-xl font-medium transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .cozy-button-primary {
+    @apply cozy-button bg-cozy-terracotta text-white hover:bg-cozy-terracotta/90
+           active:scale-95;
+  }
+
+  .cozy-button-secondary {
+    @apply cozy-button bg-cozy-sage text-white hover:bg-cozy-sage/90
+           active:scale-95;
+  }
+
+  .cozy-input {
+    @apply w-full px-4 py-2 rounded-xl border border-cozy-sand
+           focus:outline-none focus:ring-2 focus:ring-cozy-terracotta/30
+           bg-white placeholder-cozy-warmGray transition-all;
+  }
+
+  .cozy-checkbox {
+    @apply w-5 h-5 rounded-md border-2 border-cozy-sage
+           checked:bg-cozy-sage checked:border-cozy-sage
+           focus:ring-2 focus:ring-cozy-sage/30 transition-all cursor-pointer;
+  }
+
+  .section-header {
+    @apply text-3xl font-display font-semibold text-cozy-darkBrown mb-6;
+  }
+
+  .subsection-header {
+    @apply text-xl font-display font-medium text-cozy-brown mb-4;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4A59A;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C09485;
+}
+
+/* Smooth animations */
+* {
+  @apply transition-colors duration-200;
+}
